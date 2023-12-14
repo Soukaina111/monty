@@ -1,8 +1,8 @@
 #include "monty.h"
-void search_fun(char *oper_code, char *val, int i, int pattern)
+void search_fun(char *opcode, char *value, int ln, int format)
 {
 	int i = 0;
-	int fg = 1;
+	int flag = 1;
 
 	instruction_t func_list[] = {
 		{"push", push_stack},
@@ -23,21 +23,21 @@ void search_fun(char *oper_code, char *val, int i, int pattern)
 		{NULL, NULL}
 	};
 
-	if (oper_code[0] == '#')
+	if (opcode[0] == '#')
 		return;
 
-	while (func_list[i].oper_code != NULL)
+	while (func_list[i].opcode != NULL)
 	{
-		if (strcmp(oper_code, func_list[i].oper_code) == 0)
+		if (strcmp(opcode, func_list[i].opcode) == 0)
 		{
-			execute_fnct(func_list[i].f, oper_code, val, i, pattern);
-			fg = 0;
+			execute_fnct(func_list[i].f, opcode, value, ln, format);
+			flag = 0;
 			break;
 		}
 		i++;
 	}
 
-	if (fg == 1)
-		handle_error(3, i, oper_code);
+	if (flag == 1)
+		handle_error(3, ln, opcode);
 }
 

@@ -1,10 +1,10 @@
 #include "monty.h"
-void exchange_elmts(stack_t **stack, unsigned int l)
+void exchange_elmts(stack_t **stack, unsigned int line_number)
 {
 	stack_t *aux;
 	if (!(stack && *stack && (*stack)->next))
 	{
-		fprintf(stderr, "L%u: can't swap, stack too short\n", l);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 

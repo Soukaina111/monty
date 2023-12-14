@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void rotate_left(stack_t **stack, _attribute_((unused)) unsigned int i)
+void rotate_left(stack_t **stack, __attribute__((unused)) unsigned int i)
 {
 	stack_t *aux;
 	if (!(stack && *stack && (*stack)->next))

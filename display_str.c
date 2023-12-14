@@ -1,7 +1,7 @@
 #include "monty.h"
 
 
-void display_str(stack_t **stack, _attribute_((unused)) unsigned int i)
+void display_str(stack_t **stack, __attribute__((unused)) unsigned int i)
 {
 	stack_t *cpy;
 	if (!(stack && *stack))

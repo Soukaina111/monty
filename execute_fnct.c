@@ -5,7 +5,7 @@ void execute_fnct(op_func func, char *oper_code, char *va, int l, int pattern)
 	int fg;
 	int i;
 
-	flag = 1;
+	fg = 1;
 	if (strcmp(oper_code, "push") == 0)
 	{
 		if (va != NULL && va[0] == '-')

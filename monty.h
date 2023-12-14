@@ -1,8 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-
-
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <unistd.h>
@@ -44,18 +42,25 @@ typedef struct instruction_s
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 void load_file(char *file_name);
-int process_inst(char *buf, int i, int pattern);
+int process_inst(char *buffer, int line_number, int format);
 void process_input(FILE *);
 void search_fun(char *, char *, int, int);
+
 stack_t *crt_stack_nd(int n);
 void clear_stack(void);
-void prt_st_contents(stack_t **, unsigned int);
+void  prt_st_contents(stack_t **, unsigned int);
 void push_stack(stack_t **, unsigned int);
 void enq_stack(stack_t **, unsigned int);
+
 void execute_fnct(op_func, char *, char *, int, int);
+
 void top_element(stack_t **, unsigned int);
 void from_stack(stack_t **, unsigned int);
 void no_operation(stack_t **, unsigned int);
+void exchange_elmts(stack_t **, unsigned int);
+
+
+void append_elmts(stack_t **, unsigned int);
 void remove_elmts(stack_t **, unsigned int);
 void partition_elmts(stack_t **, unsigned int);
 void multply_elmts(stack_t **, unsigned int);
@@ -66,5 +71,4 @@ void rotate_left(stack_t **, unsigned int);
 void handle_error(int num_mistake, ...);
 void h_str_error(int num_mistake, ...);
 void rotate_right(stack_t **, unsigned int);
-
 #endif
